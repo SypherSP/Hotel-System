@@ -4,7 +4,7 @@ using namespace std;
 namespace Project{
     class Person
     {
-        protected:
+        private:
             string name;
             string email;
             string phone_no;
