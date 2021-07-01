@@ -1,7 +1,7 @@
 
 #include<string>
 using namespace std;
-
+namespace Project{
     class Person
     {
         protected:
@@ -13,4 +13,8 @@ using namespace std;
             Person(string, string, string);
             void change_no(string);
             void change_email(string);
+            string get_name();
+            string get_email();
+            string get_phone_no();
     };
+}
