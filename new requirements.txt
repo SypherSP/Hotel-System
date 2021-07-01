@@ -1,0 +1,4 @@
+
+new classes to create:   
+	Table with fields of Waiter and Customer type
+	Hotel Manager and resturant manager-- the executing classes for hotel and resturant
