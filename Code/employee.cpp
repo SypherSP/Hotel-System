@@ -21,6 +21,6 @@ namespace Project
 
     string Employee::get_id()
     {
-        return (id+"");
+        return std::to_string(id);
     }
 }

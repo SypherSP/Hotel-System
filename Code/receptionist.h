@@ -1,3 +1,5 @@
+#ifndef __receptionist
+#define __receptionist
 #include "employee.h"
 #include "person.h"
 #include <string>
@@ -6,7 +8,7 @@
 
 namespace Project
 {
-    class Receptionist:Employee
+    class Receptionist:public Employee
     {
         public:
             Receptionist(string,string,string,int);
@@ -15,3 +17,4 @@ namespace Project
             void getRoomCleaned();
     };
 }
+#endif

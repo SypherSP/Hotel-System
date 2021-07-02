@@ -1,9 +1,11 @@
+#ifndef __employee
+#define __employee
 #include "person.h"
 #include <string>
 
 namespace Project
 {
-    class Employee:Person
+    class Employee:public Person
     {
         private:
             int id;
@@ -18,3 +20,4 @@ namespace Project
             string get_type();
     };
 }
+#endif

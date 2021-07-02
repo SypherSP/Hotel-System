@@ -19,6 +19,7 @@ namespace Project
     void Person::change_no(string phone_no)
     {
         cout<<"Phone Number of "<<name<<" changed from "<<this->phone_no<<" to "<<phone_no<<endl;
+        this->phone_no=phone_no;
     }
 
     string Person::get_name(){
