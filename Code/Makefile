@@ -1,18 +1,19 @@
-all: Employee.o Person.o Waiter.o
+all:Employee Person Waiter Receptionist
 
-PersonExample: person.o PersonExample.cpp
-	g++ PersonExample.cpp person.cpp -o PersonExample 
+Test:Employee test.cpp	
+	g++ employee.o person.o test.cpp -o Test
 
-Employee:Employee.o
-	g++ employee.cpp 
-
-Person.o:person.h person.cpp
+Person:person.h person.cpp
 	g++ -c person.cpp
 
-Employee.o:Person.o employee.h employee.cpp
+Employee:Person employee.h employee.cpp
 	g++ -c employee.cpp
 
-Waiter.o:Employee.o waiter.h waiter.cpp
+Waiter:Employee waiter.h waiter.cpp
 	g++ -c waiter.cpp
 
-clean rm *.o PersonExample
+Receptionist: Employee receptionist.h receptionist.cpp	
+	g++ -c receptionist.cpp
+
+clean:
+	rm -f *.o Test

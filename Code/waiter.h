@@ -1,3 +1,5 @@
+#ifndef __waiter
+#define __waiter
 #include "employee.h"
 #include "person.h"
 #include <string>
@@ -6,7 +8,7 @@
 
 namespace Project
 {
-    class Waiter:Employee
+    class Waiter:public Employee
     {
         private:
             int table_no;//instead of table no it will be a Table class
@@ -18,3 +20,4 @@ namespace Project
             void cleanTable();
     };
 }
+#endif

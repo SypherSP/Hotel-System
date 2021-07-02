@@ -1,10 +1,15 @@
+#ifndef __person
+#define __person
 
 #include<string>
+
 using namespace std;
-namespace Project{
+
+namespace Project
+{
     class Person
     {
-        private:
+        private:    
             string name;
             string email;
             string phone_no;
@@ -18,3 +23,4 @@ namespace Project{
             string get_phone_no();
     };
 }
+#endif
