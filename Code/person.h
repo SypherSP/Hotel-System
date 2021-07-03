@@ -1,5 +1,5 @@
-#ifndef __person
-#define __person
+#ifndef __PERSON
+#define __PERSON
 
 #include<string>
 

@@ -1,5 +1,5 @@
-#ifndef __receptionist
-#define __receptionist
+#ifndef __RECEPTIONIST
+#define __RECEPTIONIST
 #include "employee.h"
 #include "person.h"
 #include <string>
