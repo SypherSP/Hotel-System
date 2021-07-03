@@ -1,5 +1,5 @@
-#ifndef __waiter
-#define __waiter
+#ifndef __WAITER
+#define __WAITER
 #include "employee.h"
 #include "person.h"
 #include <string>

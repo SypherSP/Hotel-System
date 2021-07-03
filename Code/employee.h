@@ -1,5 +1,5 @@
-#ifndef __employee
-#define __employee
+#ifndef __EMPLOYEE
+#define __EMPLOYEE
 #include "person.h"
 #include <string>
 
