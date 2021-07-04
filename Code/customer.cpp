@@ -5,12 +5,6 @@
 using namespace std;
 namespace Project
 {
-    // Customer::Customer(string name, string email, string phone_no)
-    // {
-    //     this->name = name;
-    //     this->phone_no = phone_no;
-    //     this->email = email;
-    // }
     void Customer::check_In()
     {
         cout << "Enter room number that you would like to have :" << endl;
@@ -20,7 +14,7 @@ namespace Project
         bool found = false;
         for (i = 0; i < rooms.size(); i++)
         {
-            if (rooms[i].roomNO == room_no)
+            if (rooms[i].roomNo == room_no)
             {
                 found = 1;
                 break;
@@ -33,13 +27,13 @@ namespace Project
         else if (found && rooms[i].status == 0)
         {
             cout << "Enter booking id: ";
-            cin >> rooms[i].customer.booking_id;
+            cin >> rooms[i].customer.booking_Id;
             cout << "Enter Customer Name (First Name): ";
-            cin >> rooms[i].cust.name;
+            cin >> rooms[i].customer.name;
             cout << "Enter Phone: ";
-            cin >> rooms[i].cust.phone_no;
+            cin >> rooms[i].customer.phone_no;
             cout << "Enter Advance Payment: ";
-            cin >> rooms[i].cust.advance_payment;
+            cin >> rooms[i].customer.advance_payment;
 
             rooms[i].status = 1;
 
