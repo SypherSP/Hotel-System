@@ -1,0 +1,25 @@
+#ifndef __TABLE
+#define __TABLE
+#include<bits/stdc++.h>
+using namespace std;
+#include "customer.h"
+#include "waiter.h"
+namespace Project
+{
+    class Table
+    {
+        int table_no;
+        int table_status;
+        Waiter waiter;
+        Customer cust;
+        int seats;
+        public:
+        Table();
+        void check_table();
+        void add_table();
+
+    };
+   vector<Table>tables;  
+}
+
+#endif
