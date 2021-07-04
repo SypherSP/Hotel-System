@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 #include "room.h"
+ 
 namespace Project
 {
-    
-   
+     vector<Room>rooms;
     void Room::addRoom(int room_number)
     {
         Room room;
@@ -58,7 +58,7 @@ namespace Project
         if(room_number>rooms.size() && room_number<0) cout<<"please enter valid number"<<endl;
         else 
         {
-            rooms.erase(room_number-1);
+            // rooms.erase(room_number-1);
             cout<<"room with room number"<<room_number<<" deleted succefully."<<endl;
         }
     }

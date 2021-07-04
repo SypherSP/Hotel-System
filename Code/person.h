@@ -9,7 +9,7 @@ namespace Project
 {
     class Person
     {
-        private:    
+        protected:    
             string name;
             string email;
             string phone_no;
