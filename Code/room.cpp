@@ -3,7 +3,7 @@
  
 namespace Project
 {
-     vector<Room>rooms;
+    
     void Room::addRoom(int room_number)
     {
         Room room;

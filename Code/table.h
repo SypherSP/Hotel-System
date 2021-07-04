@@ -7,12 +7,13 @@ using namespace std;
 namespace Project
 {
     class Table
-    {
+    {   
         int table_no;
         int table_status;
         Waiter waiter;
         Customer cust;
         int seats;
+        friend class Restaurant_manager;
         public:
         Table();
         void check_table();
