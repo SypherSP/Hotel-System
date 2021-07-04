@@ -49,6 +49,6 @@ namespace Project
     }
     void Restaurant_manager::takePayment(Customer custom)
     {
-        
+               
     }
 }

@@ -14,6 +14,7 @@ namespace Project
         Customer cust;
         int seats;
         friend class Restaurant_manager;
+        friend class Waiter;
         public:
         Table();
         void check_table();
