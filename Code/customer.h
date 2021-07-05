@@ -10,10 +10,14 @@ namespace Project
     private:
         int booking_Id;
         int advance_payment;
-        public:
+    
+    public:
+    Customer();
+        Customer(string,string,string);
         void check_In();
         void check_out(int);
         void order_food();
+        
     };
 }
 

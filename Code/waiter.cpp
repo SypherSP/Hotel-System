@@ -7,20 +7,19 @@
 
 namespace Project
 {
-    Waiter::Waiter(string name,string email, string phone_no,int t=1)
-           :Employee(name,email,phone_no,t)
+    Waiter::Waiter(string name,string email, string phone_no)
+           :Employee(name,email,phone_no,1)
     {
-        table_no=0;
+
     }
 
-    void Waiter::takeOrder(int table_no)
+    void Waiter::takeOrder()
     {
-        this->table_no=table_no;
-        cout<<"Order has been taken at table no "<<table_no<<endl;
+    //    cout<<"Order has been taken at table no "<<table_no<<endl;
     }
 
     void Waiter::cleanTable()
     {
-        cout<<"table no "<<table_no<<" has been cleaned. "<<endl;
+    //    cout<<"table no "<<table_no<<" has been cleaned. "<<endl;
     }
 }

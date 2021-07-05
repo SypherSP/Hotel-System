@@ -13,12 +13,11 @@ namespace Project
     {
         private:
             Table table_assigned;//instead of table no it will be a Table class
-           
             friend class restaurant_manager;
         public:
-            Waiter(string,string,string,int);
+            Waiter(string,string,string);
              int waiter_status; 
-            void takeOrder(int);
+            void takeOrder();
             void cleanTable();
     };
     vector<Waiter>waiters;
