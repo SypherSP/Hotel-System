@@ -1,69 +1,58 @@
-#include <bits/stdc++.h>
 #include "room.h"
- 
+ #include "customer.h"
+
 namespace Project
 {
-    
-    void Room::addRoom(int room_number)
+    const char* Room::room_type[]= {"Single", "Double", "Quad", "Twin", "Queen"};
+    int Room::counter=1;
+    Room::Room(int t)
     {
-        Room room;
-        room.roomNo = room_number;
-        int n;
-        string room_type[] = {"Single", "Double", "Triple", "Queen", "Twin"};
-        for (int i = 0; i < 5; i++)
-        {
-            cout << "enter " << i + 1 << " for " << type[i] << "- type room";
-        }
-        cin >> n;
-        if (n > 0 && n <= 5)
-            room.type = room_type[n - 1];
-        else
-            cout << "invalid number." << endl;
-        room.status = 0;
-        rooms.push_back(room);
-        cout << "room added successfully!" << endl;
+        this->t=t;
+        this->roomNo=counter++;
+        status=false;
+        cust=&Customer();
     }
-    void Room::searchRoom(int room_number)
+
+    Room::Room(int t,Customer& cust)
     {
-        int i = 0;
-        bool found = false;
-        for (i = 0; i < rooms.size(); i++)
-        {
-            if (rooms[i].roomNo == room_number)
-            {
-                found = true;
-                break;
-            }
-        }
-        if (found)
-        {
-            if (rooms[i].status)
-                cout << "room is reserved." << endl;
-            else
-            {
-                cout << "room is available. Here are the room details." << endl;
-                displayRoom(rooms[i]);
-            }
-        }
-        else
-            cout << "sorry! room not found." << endl;
+        this->t=t;
+        this->roomNo=counter++;
+        status=true;
+        this->cust=&cust;
     }
-    void Room::displayRoom(Room room_s)
+
+    Room::Room()//null room
     {
-        cout<<"\nRoom Number: "<<room_s.roomNo;
-        cout<<"Type:"<<room_s.type;
+        roomNo=0;
     }
-    void Room::deleteRoom(int room_number)
+
+    void Room::assignCust(Customer& cust)
     {
-        if(room_number>rooms.size() && room_number<0) cout<<"please enter valid number"<<endl;
-        else 
-        {
-            // rooms.erase(room_number-1);
-            cout<<"room with room number"<<room_number<<" deleted succefully."<<endl;
-        }
+        this->cust=&cust;
     }
-    void Room::cleanRoom(int room_number)
+
+    bool Room::isOccupied()
     {
-         cout<<"room with room number"<<room_number<<" cleaned succefully."<<endl;
+        return status;
+    }
+
+    int32_t Room::getRoomNo()
+    {
+        return roomNo;
+    }
+
+    string  Room::getType()
+    {
+        return room_type[t];
+    }
+
+    void Room::unoccupy()
+    {
+        status=false;
+    }
+
+    int Room::getT()
+    {
+        return t;
     }
 }
