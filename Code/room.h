@@ -1,8 +1,7 @@
 #ifndef __ROOM
 #define __ROOM
-#include <bits/stdc++.h>
 #include "customer.h"
-    // having problem with this vector declaration
+
 using namespace std;
 namespace Project
 {   
@@ -10,16 +9,16 @@ namespace Project
     class Room
     {
         private:
-            int id;
             int roomNo;
             bool status;
             static int counter;
             friend class Customer;
             const static char* room_type[]; 
             int t;//type
-            Customer cust;
+            Customer* cust;
 
         public:
+            Room();//null room
             Room(int);
             Room(int, Customer&);
             int rent=1000;
@@ -27,7 +26,8 @@ namespace Project
             bool isOccupied();
             string getType();
             int getT();
+            void assignCust(Customer&);
+            void unoccupy();
     };
-     vector<Room>rooms;
 }
 #endif

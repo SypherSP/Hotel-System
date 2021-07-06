@@ -1,17 +1,16 @@
-#include <bits/stdc++.h>
 #include "room.h"
  #include "customer.h"
 
 namespace Project
 {
-    const char* Room::room_type[]= {"Single", "Double", "Triple", "Queen", "Twin"};
+    const char* Room::room_type[]= {"Single", "Double", "Quad", "Twin", "Queen"};
     int Room::counter=1;
     Room::Room(int t)
     {
         this->t=t;
         this->roomNo=counter++;
         status=false;
-        cust=Customer();
+        cust=&Customer();
     }
 
     Room::Room(int t,Customer& cust)
@@ -19,10 +18,20 @@ namespace Project
         this->t=t;
         this->roomNo=counter++;
         status=true;
-        this->cust=cust;
+        this->cust=&cust;
     }
 
-    void Room::isOccupied()
+    Room::Room()//null room
+    {
+        roomNo=0;
+    }
+
+    void Room::assignCust(Customer& cust)
+    {
+        this->cust=&cust;
+    }
+
+    bool Room::isOccupied()
     {
         return status;
     }
@@ -35,6 +44,11 @@ namespace Project
     string  Room::getType()
     {
         return room_type[t];
+    }
+
+    void Room::unoccupy()
+    {
+        status=false;
     }
 
     int Room::getT()

@@ -13,7 +13,7 @@ project should contain:
 3. pdf containing:
   	 1.class diagram  
    	 2.dynamic modelling(state diagrams/activity diagrams/sequence diagrams)
-         3.other info about header files and other stuff
+     3.other info about header files and other stuff
 last date for submission -11th July
  submit one pdf file(containing class diagrams and other information about header files
  viva will happen after endsems only if he finds our project not expressive enough

@@ -16,20 +16,24 @@ namespace Project
         private:
             static vector <Room> rooms;
             static vector <Employee> empsH;
+            static int maxRooms;
+            static int idCounter;
+            
 
         protected:
             void addRoom(int t);
+
         public:
             Receptionist(string,string,string);
-            void createReservation();
+            int createReservation(Customer&);
             void takePayment();
             void createRoom();
-            Room& searchForRoom(int t);
+            Room* searchForRoom(int t);
             void getRoomCleaned(Room&);
             void createRoom(int);
             void createRoom(int,Customer&);
             void createEmployee(int);
-            void run();
+            void run(Customer&);
     };
 }
 #endif

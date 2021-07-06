@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 #include "customer.h"
 #include "person.h"
 #include "room.h"
@@ -8,13 +7,17 @@ namespace Project
     Customer::Customer()
         :Person("N/A","N/A","N/A")
     {
-        
+        Room x=Room();
+        room=&x;
+        booking_Id=0;
     }
 
     Customer::Customer(string name,string email,string phone_no)
         :Person(name,email,phone_no)
     {
-
+        Room x=Room();
+        room=&x;
+        booking_Id=0;
     }
 
     // void Customer::check_In()
@@ -70,7 +73,23 @@ namespace Project
 
     //     rooms[room_number].status = 0;
     // }
+
+    void Customer::assignRoom(Room* x)
+    {
+        this->room=x;
+    }
+    
     void Customer::order_food()
     {
+    }
+
+    void Customer::assignRoom(Room* room)
+    {
+        this->room=room;  
+    }
+
+    void Customer::giveBookingID(int id)
+    {
+        this->booking_Id=id;
     }
 }
