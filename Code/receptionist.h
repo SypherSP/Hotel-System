@@ -7,8 +7,6 @@
 #include <vector>
 #include <string>
 
-//include room, customer classes
-
 namespace Project
 {
     class Receptionist:public Employee
@@ -18,7 +16,7 @@ namespace Project
             static vector <Employee> empsH;
             static int maxRooms;
             static int idCounter;
-            
+            static int cleaningCost;
 
         protected:
             void addRoom(int t);
@@ -26,14 +24,15 @@ namespace Project
         public:
             Receptionist(string,string,string);
             int createReservation(Customer&);
-            void takePayment();
+            void takePayment(Customer&);
             void createRoom();
-            Room* searchForRoom(int t);
+            Room& searchForRoom(int t);
             void getRoomCleaned(Room&);
             void createRoom(int);
             void createRoom(int,Customer&);
             void createEmployee(int);
             void run(Customer&);
+            void printBill(Customer&);   
     };
 }
 #endif
