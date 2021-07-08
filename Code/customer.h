@@ -6,7 +6,7 @@ using namespace std;
 
 namespace Project
 {
-    class Customer : protected Person
+    class Customer : public Person
     {
     private:
         int booking_Id;
