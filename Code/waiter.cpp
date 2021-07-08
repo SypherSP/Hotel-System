@@ -13,13 +13,13 @@ namespace Project
 
     }
 
-    void Waiter::takeOrder()
+    void Waiter::takeOrder(int table_no)
     {
-    //    cout<<"Order has been taken at table no "<<table_no<<endl;
+       cout<<"Order has been taken at table no "<<table_no<<endl;
     }
 
-    void Waiter::cleanTable()
+    void Waiter::cleanTable(int table_no)
     {
-    //    cout<<"table no "<<table_no<<" has been cleaned. "<<endl;
+       cout<<"table no "<<table_no<<" has been cleaned. "<<endl;
     }
 }

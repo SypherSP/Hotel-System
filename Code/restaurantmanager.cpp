@@ -1,7 +1,7 @@
 #include "employee.h"
 #include "person.h"
 #include "restaurantmanager.h"
-#include "table.h"
+#include "table.h" 
 #include <bits/stdc++.h>
 namespace Project
 {
@@ -49,6 +49,7 @@ namespace Project
     }
     void Restaurant_manager::takePayment(Customer custom)
     {
-               
+        cout<<"payment has been taken from ";
+        custom.get_name();         
     }
 }

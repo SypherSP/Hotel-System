@@ -17,8 +17,8 @@ namespace Project
         public:
             Waiter(string,string,string);
              int waiter_status; 
-            void takeOrder();
-            void cleanTable();
+            void takeOrder(int);
+            void cleanTable(int);
     };
     vector<Waiter>waiters;
 }
