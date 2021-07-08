@@ -1,7 +1,7 @@
 all:Employee Person Waiter Receptionist
 
 Test:Room Customer Welcome Receptionist test.cpp
-	g++ employee.o person.o test.cpp -o test.exe
+	g++ room.o employee.o person.o welcome.o receptionist.o test.cpp -o test.exe
 
 Person:person.h person.cpp
 	g++ -c person.cpp
@@ -25,4 +25,4 @@ Welcome:Customer welcome.h welcome.cpp
 	g++ welcome.cpp
 
 clean:
-	rm -f *.o Test.exe
+	rm -f *.o test.exe
