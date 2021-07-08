@@ -1,23 +1,21 @@
-A hotel system with classes for the different types of staff, 
-guests and a suite class consisting of rooms which will be 
-allotted to guests. Also, if time permits a billing system, 
-a restaurant system can also be added to the existing hotel system. 
+Goal: A hotel system with classes for the different types of staff, 
+	customer class along with rooms which will be allotted to the
+	customers. Ther are classes for the different types of employees.
+	Also, if time permits a billing system and a restaurant system 
+	can also be integrated into the existing hotel system.
  
 Group members- 	Sahil Rathi(LCS2020018), Manas Agarwal(LCS2020021),
 		Kumar Aryan(LCS2020067), Shashwat Pandey(LCS2020010)\
 
 
-project should contain:
-1. zip file containing all the code including header files 
-2. makeFile
-3. pdf containing:
-  	 1.class diagram  
-   	 2.dynamic modelling(state diagrams/activity diagrams/sequence diagrams)
-     3.other info about header files and other stuff
-last date for submission -11th July
- submit one pdf file(containing class diagrams and other information about header files
- viva will happen after endsems only if he finds our project not expressive enough
+Current State:
+	As of now we have been successfull in implementing the basics of
+	hotel side of the project. Some employee types still need to be 
+	added and the billing system needs to be implemented. As for now 
+	a very basic billing system exists.
+	Currently the welcome class has has been designed to create only a
+	single customer but all the other parts of the system is completely 
+	capable of handling multiple of them.
 
-
-Link to requirement doc-  https://docs.google.com/document/d/1QTQwEUguXxbUp9_bgBK56Jqx2JI11k5L639BU-JITvE/edit
-
+Instructions: 
+	run the "make clean test" command and run the test.exe file

@@ -1,3 +1,4 @@
+
 #include "receptionist.h"
 #include <string>
 #include <iostream>
@@ -12,24 +13,18 @@ namespace Project
 {
     int Receptionist::maxRooms=40;
     int Receptionist::idCounter=1;
+    int Receptionist::cleaningCost=450;
     Receptionist::Receptionist(string name,string email, string phone_no)
             :Employee(name,email,phone_no,2)
-            {
+            {}
 
-            }
-
-    void Receptionist::takePayment()//customer class as parameter
-    {
-        cout<<"Payment taken from customer "<<endl;
-    }
-
-    Room* Receptionist::searchForRoom(int t)
+    Room& Receptionist::searchForRoom(int t)
     {
         for(auto r:rooms){
-            if((r.getT()==t)&&!r.isOccupied())return &r;
+            if((r.getT()==t)&&!r.isOccupied())return r;
         }
         Room x=Room();
-        return &x;
+        return x;
     }
 
     int Receptionist::createReservation(Customer& cust)
@@ -39,14 +34,21 @@ namespace Project
         }
         cout<<"Enter the type of room you want:\n1.Single\n2.Double\n3.Quad\n4.Twin\n5.Queen\nEnter the number:";
         int t;cin>>t;
-        Room* x=searchForRoom(t-1);
-        if(x->getRoomNo()){
-            x->assignCust(cust);
+        Room& x=searchForRoom(t-1);
+        cout<<"Enter the number of days you want to stay: ";
+        int days;cin>>days;
+        if(x.getRoomNo()){
+            //x->assignCust(cust);
             cust.assignRoom(x);
         }
         else{
-            createRoom(t,cust);
+            createRoom(t-1);
+            cust.assignRoom(searchForRoom(t-1));
+            //createRoom(t,cust);
         }
+        cust.giveBookingID(idCounter++);
+        cust.addToBill(cust.room.getCostPerDay()*days);
+        cout<<"Your Booking ID is "<<cust.getBookingID()<<endl;
         return 1;
     }
 
@@ -64,22 +66,69 @@ namespace Project
         rooms.push_back(Room(t));
     }
 
-    void Receptionist::createRoom(int t,Customer& cust)
-    {
-        rooms.push_back(Room(t,cust));
-    }
+    // void Receptionist::createRoom(int t,Customer& cust)
+    // {
+    //     rooms.push_back(Room(t,cust));
+    // }
 
     void Receptionist::getRoomCleaned(Room& r)
     {
         cout<<"Room number "<<r.getRoomNo()<<" has been cleaned"<<endl; 
     }
 
-    void Receptionist::run(Customer& cust)//customer acting on as parameter
+    void Receptionist::printBill(Customer& cust)//suposed to call bill class
     {
-        //get customer number then proceed with it or if new customer 
+        cout<<"\nYour bill amounting to "<<cust.getBill()<<"Rs\nDetails have been emailed to "<<cust.get_email()<<endl;
+    }
 
+     void Receptionist::takePayment(Customer& cust)//customer class as parameter
+    {
+        printBill(cust);
+        cout<<"You can pay through the link present in the email"<<endl;
+    }
 
-
-        cust.room->unoccupy();
+    void Receptionist::run(Customer& cust)
+    {
+        rooms.push_back(Room());
+        int choice;
+        do{
+        cout<<"-----------------------------------------------\n";
+        cout<<"You are at the receptionists desk of "<<name<<endl;
+        if(!cust.getBookingID())
+        {
+            cout<<"you do not have any bookings\n";
+            cout<<"Receptionist Menu\n1.Create reservation\n2.Check Out\n2.Exit\nEnter you choice: ";
+            cin>>choice;
+            if(choice==2)break;
+            if(choice==1)
+            {
+                createReservation(cust);
+            }
+            else cout<<"Incorrect option, please try again\n";
+        }
+        else
+        {   
+            cout<<"You already have a reservation with ID"<<cust.getBookingID()<<endl;
+            cout<<"What do you want to do?\n1.Get your room cleaned\n2.Check Out\n3.Exit\nEnter you choice: ";
+            cin>>choice;
+            if(choice=3)break;
+            if(choice==1)
+            {
+                getRoomCleaned(cust.room);
+                cust.addToBill(cleaningCost);
+                cout<<"Cleaning cost "<<cleaningCost<<"has been added to you bill\n";
+                cout<<"Your total amount is "<<cust.getBill()<<endl;
+            }
+            else if(choice==2)
+            {
+                printBill(cust);
+                cust.room.unoccupy();
+                cust.room=*(new Room());
+                takePayment(cust);
+            }
+            else    
+                {cout<<"incorect choice, exiting"<<endl;break;}
+        }
+        }while(1);
     }
 }

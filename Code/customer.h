@@ -9,20 +9,24 @@ namespace Project
     class Customer : public Person
     {
     private:
+        static int counter;
+        int id;
         int booking_Id;
         int advance_payment;
-        
-    
+        int bill;
+            
     public:
-    Customer();
-        void assignRoom(Room*);
+        Customer();
+        Room& room; 
+        void assignRoom(Room&);
         Customer(string,string,string);
         void check_In();
-        void assignRoom(Room*);
         void check_out(int);
         void order_food();  
-        Room* room; 
         void giveBookingID(int);
+        int getBookingID();
+        void addToBill(int);
+        int getBill();  
     };
 }
 #endif  

@@ -1,6 +1,7 @@
 #ifndef __ROOM
 #define __ROOM
-#include "customer.h"
+
+#include <string>
 
 using namespace std;
 namespace Project
@@ -12,22 +13,23 @@ namespace Project
             int roomNo;
             bool status;
             static int counter;
-            friend class Customer;
             const static char* room_type[]; 
+            const static int costPerDay[];
             int t;//type
-            Customer* cust;
+            //Customer* cust;
 
-        public:
+        public:           
             Room();//null room
             Room(int);
-            Room(int, Customer&);
+            //Room(int, Customer&);
             int rent=1000;
             int getRoomNo();
             bool isOccupied();
             string getType();
             int getT();
-            void assignCust(Customer&);
+            //void assignCust(Customer&);
             void unoccupy();
+            int getCostPerDay();
     };
 }
 #endif
