@@ -2,7 +2,6 @@
 #define __TABLE
 #include<bits/stdc++.h>
 using namespace std;
-#include "customer.h"
 namespace Project
 {   
     class Table
@@ -20,7 +19,7 @@ namespace Project
         int getTno();
         bool check_table();
         void changeStatus();
-        Customer cust;
+        //Customer cust;
 
     };
 }

@@ -4,6 +4,7 @@
 #include "person.h"
 #include "customer.h"
 #include "waiter.h"
+#include "table.h"
 #include <vector>
 #include<bits/stdc++.h>
 using namespace std;

@@ -30,4 +30,4 @@ ResturantManager:Employee restaurantmanager.h restaurantmanager.cpp
 
 
 clean:
-	rm -f *.o test.exe
+	rm -f *.o 

@@ -1,8 +1,12 @@
+#include "restaurantmanager.h"
 #include "employee.h"
 #include "person.h"
-#include "restaurantmanager.h"
-#include "table.h" 
+#include "customer.h"
+#include "waiter.h"
+#include "table.h"
+#include <vector>
 #include <bits/stdc++.h>
+
 namespace Project
 {
     Restaurant_manager::Restaurant_manager(string name, string email, string phone_no, int t = 2)
