@@ -9,6 +9,15 @@ namespace Project
         : Employee(name, email, phone_no, t)
     {
     }
+
+    int Restaurant_manager::searchForTable()
+    {
+        for(Table t:tables)
+        if(!t.check_table())return t.getTno();
+
+        return 0;
+    }
+
     void Restaurant_manager::createReservationForFood(Customer custom)
     {
         bool found = false;
@@ -39,7 +48,6 @@ namespace Project
                 cout << "you have assigned table no " << tables[i].table_no << endl;
                 cout << "thank you!" << endl;
                 tables[i].table_status = 1;
-                tables[i].cust = custom;
             }
             else
                 cout << "No waiter is currently free. Please wait for some time." << endl;
@@ -51,5 +59,24 @@ namespace Project
     {
         cout<<"payment has been taken from ";
         custom.get_name();         
+    }
+
+    void Restaurant_manager::addTable(int seats)
+    {
+        tables.push_back(Table(seats));
+    }
+
+    void Restaurant_manager::addWaiter()
+    {
+        string name,email,phone;
+        cout<<"Enter details of new waiter\nName: ";cin>>name;
+        cout<<"Email: ";cin>>email;
+        cout<<"Phone No: ";cin>>phone;
+        waiters.push_back(Waiter(name,email,phone));
+    }
+
+    void Restaurant_manager::run(Customer custom)
+    {
+        //implementation code for the restaurant goes here
     }
 }

@@ -3,6 +3,7 @@
 #include "employee.h"
 #include "person.h"
 #include "restaurantmanager.h"
+#include "table.h"
 #include <string>
 
 namespace Project
@@ -11,13 +12,13 @@ namespace Project
     class Waiter:public Employee
     {
         private:
-            Table table_assigned;//instead of table no it will be a Table class
+            Table table_assigned;
             friend class restaurant_manager;
         public:
             Waiter(string,string,string);
              int waiter_status; 
-            void takeOrder(int);
-            void cleanTable(int);
+            void takeOrder(Table);
+            void cleanTable(Table);
     };
     vector<Waiter>waiters;
 }

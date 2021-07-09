@@ -5,7 +5,7 @@
 namespace Project
 {
     int Employee::counter=1;
-    const char* Employee::type[]={"Manager","Waiter","Receptionist","Chef","Room Keeper"};
+    const char* Employee::type[]={"Restaurant Manager","Waiter","Receptionist","Chef","Room Keeper"};
 
     Employee::Employee(string name,string email, string phone_no,int t)
             :Person(name,email,phone_no)

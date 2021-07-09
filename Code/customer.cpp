@@ -9,6 +9,7 @@ namespace Project
         :Person("N/A","N/A","N/A")
     {
         //room=Room();
+        //table=Table();
         booking_Id=0;
         bill=0;
         id=0;
@@ -17,7 +18,8 @@ namespace Project
     Customer::Customer(string name,string email,string phone_no)
         :Person(name,email,phone_no)
     {
-        //room=Room();
+        // room=Room();
+        // table=Table();
         booking_Id=0;
         bill=0;
         id=counter++;
@@ -38,6 +40,11 @@ namespace Project
         this->room=x;
     }
     
+    void Customer::assignTable(Table& t)
+    {
+        this->table=t;
+    }
+
     void Customer::order_food()
     {
     }

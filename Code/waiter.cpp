@@ -10,16 +10,16 @@ namespace Project
     Waiter::Waiter(string name,string email, string phone_no)
            :Employee(name,email,phone_no,1)
     {
-
+       
     }
 
-    void Waiter::takeOrder(int table_no)
+    void Waiter::takeOrder(Table table)
     {
-       cout<<"Order has been taken at table no "<<table_no<<endl;
+       cout<<"Order has been taken at table no "<<table.getTno()<<endl;
     }
 
-    void Waiter::cleanTable(int table_no)
+    void Waiter::cleanTable(Table table)
     {
-       cout<<"table no "<<table_no<<" has been cleaned. "<<endl;
+       cout<<"table no "<<table.getTno()<<" has been cleaned. "<<endl;
     }
 }

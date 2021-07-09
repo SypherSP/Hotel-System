@@ -5,23 +5,24 @@ using namespace std;
 #include "customer.h"
 namespace Project
 {   
-    class Waiter;
     class Table
-    {   
-        int table_no;
-        int table_status;
-        Waiter waiter;
-        Customer cust;
-        int seats;
-        friend class Restaurant_manager;
-        friend class Waiter;
+    {   private:
+            int table_no;
+            bool table_status;
+            int seats;
+            friend class Restaurant_manager;
+            friend class Waiter;
+            static int counter;
+
         public:
         Table();
-        void check_table();
-        void add_table();
+        Table(int);
+        int getTno();
+        bool check_table();
+        void changeStatus();
+        Customer cust;
 
     };
-   vector<Table>tables;  
 }
 
 #endif

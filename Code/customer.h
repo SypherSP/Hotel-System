@@ -3,7 +3,7 @@
 using namespace std;
 #include "person.h"
 #include "room.h"
-
+#include "table.h"
 namespace Project
 {
     class Customer : public Person
@@ -18,6 +18,8 @@ namespace Project
     public:
         Customer();
         Room& room; 
+        Table& table;
+        void assignTable(Table&);
         void assignRoom(Room&);
         Customer(string,string,string);
         void check_In();
