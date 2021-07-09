@@ -5,7 +5,7 @@ Goal: A hotel system with classes for the different types of staff,
 	can also be integrated into the existing hotel system.
  
 Group members- 	Sahil Rathi(LCS2020018), Manas Agarwal(LCS2020021),
-		Kumar Aryan(LCS2020067), Shashwat Pandey(LCS2020010)\
+		Kumar Aryan(LCS2020067), Shashwat Pandey(LCS2020010)
 
 
 Current State:
@@ -18,4 +18,4 @@ Current State:
 	capable of handling multiple of them.
 
 Instructions: 
-	run the "make clean test" command and run the test.exe file
+	

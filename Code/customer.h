@@ -17,13 +17,11 @@ namespace Project
             
     public:
         Customer();
-        Room& room; 
         Table& table;
+        Room& room; 
         void assignTable(Table&);
         void assignRoom(Room&);
         Customer(string,string,string);
-        void check_In();
-        void check_out(int);
         void order_food();  
         void giveBookingID(int);
         int getBookingID();
