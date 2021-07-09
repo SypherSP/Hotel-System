@@ -3,9 +3,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 #include "customer.h"
-#include "waiter.h"
 namespace Project
-{
+{   
+    class Waiter;
     class Table
     {   
         int table_no;

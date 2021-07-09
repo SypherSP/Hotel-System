@@ -4,11 +4,10 @@
 #include "person.h"
 #include "restaurantmanager.h"
 #include <string>
-#include "table.h"
-//have to include order list class and Table class
 
 namespace Project
-{
+{   
+    class Table;
     class Waiter:public Employee
     {
         private:
