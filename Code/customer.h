@@ -10,6 +10,7 @@ namespace Project
     {
     private:
         static int counter;
+        static const Room& defaultRoom;
         int id;
         int booking_Id;
         int advance_payment;
@@ -17,8 +18,8 @@ namespace Project
             
     public:
         Customer();
-        Table& table;
         Room& room; 
+        Table& table;
         void assignTable(Table&);
         void assignRoom(Room&);
         Customer(string,string,string);

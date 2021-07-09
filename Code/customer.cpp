@@ -1,14 +1,18 @@
 #include "customer.h"
 #include "person.h"
 #include "room.h"
+#include "table.h"
 using namespace std;
 namespace Project
 {
     int Customer::counter=1;
+    const Room& Customer::defaultRoom=Room();
+
     Customer::Customer()
         :Person("N/A","N/A","N/A")
     {
-        //room=Room();
+        room=defaultRoom; //attempt 1
+        //room=Room();      //attempt 2
         //table=Table();
         booking_Id=0;
         bill=0;
@@ -18,7 +22,8 @@ namespace Project
     Customer::Customer(string name,string email,string phone_no)
         :Person(name,email,phone_no)
     {
-        // room=Room();
+        //room=defaultRoom; //attempt 1
+        //room=Room();      //attempt 2
         // table=Table();
         booking_Id=0;
         bill=0;
