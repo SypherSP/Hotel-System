@@ -2,7 +2,7 @@
 #define __WELCOME
 
 #include "receptionist.h"
-#include "restaurantmanager.h"
+//#include "restaurantmanager.h"
 #include "customer.h"
 #include <vector>
 #include <iostream>
@@ -13,7 +13,7 @@ namespace Project
     class Welcome
     {
         private:
-            static vector <Customer> customers;
+            vector <Customer> customers;
 
         public:
             Welcome();

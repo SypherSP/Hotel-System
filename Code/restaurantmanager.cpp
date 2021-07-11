@@ -1,16 +1,18 @@
 #include "restaurantmanager.h"
 #include "employee.h"
 #include "person.h"
+
+#include "restaurantmanager.h"
+#include "table.h" 
 #include "customer.h"
 #include "waiter.h"
-#include "table.h"
 #include <vector>
 #include <bits/stdc++.h>
 
 namespace Project
 {
-    Restaurant_manager::Restaurant_manager(string name, string email, string phone_no, int t = 2)
-        : Employee(name, email, phone_no, t)
+    Restaurant_manager::Restaurant_manager(string name, string email, string phone_no)
+        : Employee(name, email, phone_no,0)
     {
     }
 
@@ -79,7 +81,7 @@ namespace Project
         waiters.push_back(Waiter(name,email,phone));
     }
 
-    void Restaurant_manager::run(Customer custom)
+    void Restaurant_manager::run(Customer* custom)
     {
         //implementation code for the restaurant goes here
     }

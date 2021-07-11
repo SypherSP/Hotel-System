@@ -1,6 +1,6 @@
 #include "welcome.h"
 #include "receptionist.h"
-#include "restaurantmanager.h"
+//#include "restaurantmanager.h"
 #include "customer.h"
 #include <vector>
 #include <iostream>
@@ -14,8 +14,8 @@ namespace Project
     Welcome::Welcome(){}
     void Welcome::run()
     {
-        Room nullRoom=Room();
-        Receptionist rec=Receptionist("MASS","hotel.system@hrs.com","1234567890");
+        Receptionist* rec=new Receptionist("MASS","receptionist@hotelsystem.com","1234567890");
+        //Restaurant_manager* res=new Restaurant_manager("Michelin","restaurantman@hotelsystem.com","9876543210");
         cout<<"---------------------Welcome-------------------";
         cout<<"Please enter your details: ";
         string name,email,phone;
@@ -28,7 +28,7 @@ namespace Project
         cout<<"Enter your choice: ";cin>>choice;
         if(choice==1)
         {
-            rec.run(customers[0]);
+            rec->run(&customers[0]);
         }
         else if(choice==2)
         {

@@ -18,11 +18,11 @@ namespace Project
             vector <Table> tables;
 
         public:
-            Restaurant_manager(string,string,string,int);
+            Restaurant_manager(string,string,string);
             void createReservationForFood(Customer);
             void takePayment(Customer);
             void addTable(int);
-            void run(Customer);
+            void run(Customer*);
             int searchForTable();
             void addWaiter();
     };

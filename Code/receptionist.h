@@ -12,27 +12,28 @@ namespace Project
     class Receptionist:public Employee
     {
         private:
-            static vector <Room> rooms;
-            static vector <Employee> empsH;
+            vector <Room*> rooms;
+            vector <Employee*> empsH;
             static int maxRooms;
             static int idCounter;
             static int cleaningCost;
+            Room* defaultRoom;
 
         protected:
             void addRoom(int t);
 
         public:
             Receptionist(string,string,string);
-            int createReservation(Customer&);
-            void takePayment(Customer&);
+            int createReservation(Customer*);
+            void takePayment(Customer*);
             void createRoom();
-            Room& searchForRoom(int t);
-            void getRoomCleaned(Room&);
+            Room* searchForRoom(int t);
+            void getRoomCleaned(Room*);
             void createRoom(int);
             void createRoom(int,Customer&);
             void createEmployee(int);
-            void run(Customer&);
-            void printBill(Customer&);   
+            void run(Customer*);
+            void printBill(Customer*);   
     };
 }
 #endif

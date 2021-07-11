@@ -14,13 +14,11 @@ namespace Project
             static int counter;
 
         public:
-        Table();
-        Table(int);
-        int getTno();
-        bool check_table();
-        void changeStatus();
-        //Customer cust;
-
+            Table();
+            Table(int);
+            int getTno();
+            bool check_table();
+            void changeStatus();
     };
 }
 
