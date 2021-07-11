@@ -5,17 +5,20 @@ Goal: A hotel system with classes for the different types of staff,
 	can also be integrated into the existing hotel system.
  
 Group members- 	Sahil Rathi(LCS2020018), Manas Agarwal(LCS2020021),
-		Kumar Aryan(LCS2020067), Shashwat Pandey(LCS2020010)
+				Kumar Aryan(LCS2020067), Shashwat Pandey(LCS2020010)
 
 
 Current State:
 	As of now we have been successfull in implementing the basics of
 	hotel side of the project. Some employee types still need to be 
-	added and the billing system needs to be implemented. As for now 
-	a very basic billing system exists.
+	added and the billing system needs to be implemented. A very basic
+	billing system exists.
 	Currently the welcome class has has been designed to create only a
 	single customer but all the other parts of the system is completely 
 	capable of handling multiple of them.
 
 Instructions: 
+	run the "make clean test" command in the Code directory and then run 
+	the test.exe file created
 	
+Reqirements and other documents are present in the Docs directory

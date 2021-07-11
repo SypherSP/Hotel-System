@@ -2,7 +2,6 @@
 #define __WAITER
 #include "employee.h"
 #include "person.h"
-#include "restaurantmanager.h"
 #include "table.h"
 #include <string>
 
